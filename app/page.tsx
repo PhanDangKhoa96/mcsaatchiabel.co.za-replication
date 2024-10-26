@@ -1,5 +1,6 @@
 import Link from "next/link";
 import StickyScroll1 from "./_components/OnWebComponents/StickyScroll1";
+import StickyScroll2 from "./_components/OnWebComponents/StickyScroll2";
 
 export default function Home() {
     return (
@@ -9,7 +10,7 @@ export default function Home() {
                     <h1 className="heading-60-150 mb-8">Website Replication</h1>
                     <div className="flex justify-between text-center">
                         <Link
-                            href={"#"}
+                            href={"https://www.mcsaatchiabel.co.za/"}
                             className="heading-16-40 text-blue hover:underline">
                             Credit
                         </Link>
@@ -26,7 +27,8 @@ export default function Home() {
                     </div>
                 </div>
             </div>
-            <StickyScroll1 />
+            {/* <StickyScroll1 /> */}
+            <StickyScroll2 />
         </div>
     );
 }

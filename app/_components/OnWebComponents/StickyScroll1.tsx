@@ -42,20 +42,22 @@ const contentArray = [
 ];
 
 const StickyScroll1 = () => {
-    const containerRef = useRef(null);
+    const containerRef = useRef<HTMLDivElement>(null);
     useGSAP(
         () => {
-            const elements = document.querySelectorAll(".screen");
+            const elements =
+                containerRef.current &&
+                containerRef.current?.querySelectorAll(".screen");
 
-            elements.forEach((el, index) => {
+            elements?.forEach((el, index) => {
+                const isLastItem = index + 1 === elements.length;
                 gsap.to(el, {
-                    yPercent: -100,
+                    yPercent: isLastItem ? 0 : -100,
                     scrollTrigger: {
                         trigger: el,
                         start: () => `+=${index * 100}% top`,
                         end: "+=100%",
                         scrub: true,
-                        // markers: true,
                     },
                 });
             });
@@ -66,55 +68,61 @@ const StickyScroll1 = () => {
         <section>
             <SectionHeading title="Sticky Scroll Variant 1" />
             <div
-                className="bg-black"
                 style={{height: `${contentArray.length * 100}vh`}}
                 ref={containerRef}>
-                <div className="sticky top-0">
+                <div className="sticky top-0 h-screen">
                     {contentArray.map(
                         (
                             {bgColor, description, image, isWhiteText, title},
                             index
-                        ) => (
-                            <div
-                                key={index}
-                                style={{
-                                    backgroundColor: bgColor,
-                                    zIndex: contentArray.length - index,
-                                }}
-                                className="screen absolute left-0 top-0 block h-screen w-full py-20">
+                        ) => {
+                            const isLastItem =
+                                index + 1 === contentArray.length;
+                            return (
                                 <div
+                                    key={index}
+                                    style={{
+                                        backgroundColor: bgColor,
+                                        zIndex: contentArray.length - index,
+                                    }}
                                     className={clsx(
-                                        "container flex h-full flex-col lg:flex-row lg:flex-wrap",
-                                        isWhiteText
-                                            ? "text-white"
-                                            : "text-black"
+                                        "screen absolute left-0 block h-screen w-full py-20",
+                                        isLastItem ? "bottom-0" : "top-0"
                                     )}>
-                                    <div className="mb-8 w-full lg:mb-12">
-                                        <h3
-                                            className={
-                                                "heading-70-170 max-w-3xl text-balance"
-                                            }>
-                                            {title}
-                                        </h3>
-                                    </div>
+                                    <div
+                                        className={clsx(
+                                            "container flex h-full flex-col lg:flex-row lg:flex-wrap",
+                                            isWhiteText
+                                                ? "text-white"
+                                                : "text-black"
+                                        )}>
+                                        <div className="mb-8 w-full lg:mb-12">
+                                            <h3
+                                                className={
+                                                    "heading-70-170 max-w-3xl text-balance"
+                                                }>
+                                                {title}
+                                            </h3>
+                                        </div>
 
-                                    <div className="lg:w-1/2">
-                                        <p className="text-balance lg:max-w-md lg:text-lg">
-                                            {description}
-                                        </p>
-                                    </div>
+                                        <div className="lg:w-1/2">
+                                            <p className="text-balance lg:max-w-md lg:text-lg">
+                                                {description}
+                                            </p>
+                                        </div>
 
-                                    {image && (
-                                        <img
-                                            src={image}
-                                            className="ml-auto mt-auto aspect-square w-2/3 max-w-md object-cover sm:w-1/3"
-                                            alt=""
-                                            loading="lazy"
-                                        />
-                                    )}
+                                        {image && (
+                                            <img
+                                                src={image}
+                                                className="ml-auto mt-auto aspect-square w-2/3 max-w-md object-cover sm:w-1/3"
+                                                alt=""
+                                                loading="lazy"
+                                            />
+                                        )}
+                                    </div>
                                 </div>
-                            </div>
-                        )
+                            );
+                        }
                     )}
                 </div>
             </div>
