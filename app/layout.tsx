@@ -1,10 +1,24 @@
 import type {Metadata} from "next";
 import "./globals.css";
+import {LenisProvider} from "./_components/Provider/LenisProvider";
+import {GsapProvider} from "./_components/Provider/GsapProvider";
+import {Bebas_Neue, Roboto} from "next/font/google";
 
 export const metadata: Metadata = {
     title: "Khoa Phan Playground",
     description: "Khoa Phan's Playground",
 };
+
+const bebasNeue = Bebas_Neue({
+    variable: "--font-bebasNeue",
+    weight: ["400"],
+    subsets: ["latin"],
+});
+const roboto = Roboto({
+    variable: "--font-roboto",
+    weight: ["400", "700"],
+    subsets: ["latin"],
+});
 
 export default function RootLayout({
     children,
@@ -13,7 +27,11 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <body className={`antialiased`}>{children}</body>
+            <body
+                className={`${bebasNeue.variable} ${roboto.variable} antialiased`}>
+                <LenisProvider>{children}</LenisProvider>
+                <GsapProvider scrollTrigger />
+            </body>
         </html>
     );
 }

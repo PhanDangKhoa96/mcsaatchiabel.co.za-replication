@@ -3,7 +3,36 @@
 @tailwind utilities;
 
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    @apply font-roboto;
+}
+
+@layer components {
+    .container {
+        @apply mx-auto max-w-[1920px] px-4 leading-tight sm:px-5 xl:px-6;
+    }
+
+    /* Typonography for screen 390 - 1280 */
+    .heading-70-170 {
+        font-size: clamp(4.375rem, 1.6362rem + 11.236vw, 10.625rem);
+
+        @apply font-bebasNeue font-bold uppercase leading-[0.8];
+    }
+
+    .heading-60-150 {
+        font-size: clamp(3.75rem, 1.2851rem + 10.1124vw, 9.375rem);
+
+        @apply font-bebasNeue font-bold uppercase leading-[0.8];
+    }
+
+    .heading-16-40 {
+        font-size: clamp(1rem, 0.3427rem + 2.6966vw, 2.5rem);
+
+        @apply font-bebasNeue font-bold uppercase leading-[0.8];
+    }
 }
