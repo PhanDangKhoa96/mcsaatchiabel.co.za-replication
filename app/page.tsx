@@ -17,17 +17,18 @@ export default function Home() {
                         <Link
                             href={"#"}
                             className="heading-16-40 text-blue hover:underline">
-                            Source code
+                            Source code (Will update soon!)
                         </Link>
                         <Link
-                            href={"#"}
+                            href={"https://www.pldkhoa.dev/playground"}
                             className="heading-16-40 text-blue hover:underline">
                             All demos
                         </Link>
                     </div>
                 </div>
             </div>
-            {/* <StickyScroll1 /> */}
+            <div className="h-px bg-black"></div>
+            <StickyScroll1 />
             <StickyScroll2 />
         </div>
     );

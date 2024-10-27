@@ -16,7 +16,7 @@ const bebasNeue = Bebas_Neue({
 });
 const roboto = Roboto({
     variable: "--font-roboto",
-    weight: ["400", "700"],
+    weight: ["400", "500", "700"],
     subsets: ["latin"],
 });
 
