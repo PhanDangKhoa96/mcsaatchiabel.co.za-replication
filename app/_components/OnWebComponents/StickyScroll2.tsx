@@ -148,7 +148,6 @@ const StickyScroll2 = () => {
                 </div>
             </div>
 
-            <div className="h-screen"></div>
         </section>
     );
 };

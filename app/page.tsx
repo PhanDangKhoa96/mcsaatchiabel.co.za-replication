@@ -30,6 +30,12 @@ export default function Home() {
             <div className="h-px bg-black"></div>
             <StickyScroll1 />
             <StickyScroll2 />
+
+            <div className="heading-60-150 container grid h-screen place-items-center text-balance text-center text-blue">
+                There are more to come!
+                <br />
+                Stay tune! :D
+            </div>
         </div>
     );
 }
