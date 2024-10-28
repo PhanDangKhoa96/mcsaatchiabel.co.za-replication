@@ -34,7 +34,7 @@ export default function Home() {
             <div className="heading-60-150 container grid h-screen place-items-center text-balance text-center text-blue">
                 There are more to come!
                 <br />
-                Stay tune! :D
+                Stay tuned! :D
             </div>
         </div>
     );
