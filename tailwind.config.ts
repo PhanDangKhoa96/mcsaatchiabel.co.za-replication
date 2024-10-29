@@ -27,6 +27,14 @@ const config: Config = {
                     ...defaultTheme.fontFamily.sans,
                 ],
             },
+
+            transitionTimingFunction: {
+                "power-1-in-out": "cubic-bezier(0.272, 0, 0.744, 1)",
+            },
+
+            transitionDuration: {
+                400: "400ms",
+            },
         },
     },
     plugins: [],

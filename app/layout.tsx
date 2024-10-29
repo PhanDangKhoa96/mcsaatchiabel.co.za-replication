@@ -1,5 +1,5 @@
 import type {Metadata} from "next";
-import "./globals.css";
+import "./_styles/globals.css";
 import {LenisProvider} from "./_components/Provider/LenisProvider";
 import {GsapProvider} from "./_components/Provider/GsapProvider";
 import {Bebas_Neue, Roboto} from "next/font/google";
