@@ -68,9 +68,11 @@ const Listing = () => {
                                 setPreviousIndex(index - 1);
                             }}
                             onMouseLeave={() => {
-                                isLastItem
-                                    ? setActiveIndex(index + 1)
-                                    : setActiveIndex(-1);
+                                if (isLastItem) {
+                                    setActiveIndex(index + 1);
+                                } else {
+                                    setActiveIndex(-1);
+                                }
 
                                 setPreviousIndex(index);
                             }}
