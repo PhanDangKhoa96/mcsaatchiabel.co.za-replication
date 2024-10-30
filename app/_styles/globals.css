@@ -33,6 +33,11 @@ body {
 
         @apply font-bebasNeue font-bold uppercase leading-[0.8];
     }
+    .heading-32-54 {
+        font-size: clamp(2rem, 1.3975rem + 2.4719vw, 3.375rem);
+        
+        @apply font-bebasNeue font-bold uppercase leading-[0.8];
+    }
 
     .heading-16-40 {
         font-size: clamp(1rem, 0.3427rem + 2.6966vw, 2.5rem);

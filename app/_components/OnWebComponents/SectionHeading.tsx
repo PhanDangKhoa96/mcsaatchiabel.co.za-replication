@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import React from "react";
 
-const SectionHeading = ({title}: {title: string; isDarkMode?: boolean}) => {
+const SectionHeading = ({title}: {title: string}) => {
     return (
         <h2
             className={

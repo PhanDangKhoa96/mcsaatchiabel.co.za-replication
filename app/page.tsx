@@ -2,6 +2,7 @@ import Link from "next/link";
 import StickyScroll1 from "./_components/OnWebComponents/StickyScroll1";
 import StickyScroll2 from "./_components/OnWebComponents/StickyScroll2";
 import CTAButton from "./_components/OnWebComponents/CTAButton";
+import Listing from "./_components/OnWebComponents/Listing";
 
 export default function Home() {
     return (
@@ -32,6 +33,7 @@ export default function Home() {
             <StickyScroll1 />
             <StickyScroll2 />
             <CTAButton />
+            <Listing />
 
             <div className="heading-60-150 container grid h-screen place-items-center text-balance text-center text-blue">
                 There are more to come!
