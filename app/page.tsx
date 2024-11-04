@@ -8,22 +8,31 @@ export default function Home() {
     return (
         <div>
             <div className="grid min-h-[100vh] place-items-center bg-white py-20 text-black">
-                <div className="container text-center">
-                    <h1 className="heading-60-150 mb-8">Website Replication</h1>
-                    <div className="flex justify-between text-center">
+                <div className="container flex min-h-[50vh] flex-col justify-between text-center">
+                    <h1 className="heading-60-150">
                         <Link
                             href={"https://www.mcsaatchiabel.co.za/"}
-                            className="heading-16-40 text-blue hover:underline">
-                            Credit
+                            target="_blank"
+                            className="block text-blue">
+                            m&csaatchi abel
                         </Link>
+                        Replication
+                    </h1>
+
+                    <div className="heading-16-40 flex items-center justify-center gap-x-5 text-center text-blue">
                         <Link
-                            href={"#"}
-                            className="heading-16-40 text-blue hover:underline">
-                            Source code (Will update soon!)
+                            href={
+                                "https://github.com/PhanDangKhoa96/mcsaatchiabel.co.za-replication"
+                            }
+                            target="_blank"
+                            className="hover:underline">
+                            Source code
                         </Link>
+                        <span>|</span>
                         <Link
                             href={"https://www.pldkhoa.dev/playground"}
-                            className="heading-16-40 text-blue hover:underline">
+                            target="_blank"
+                            className="hover:underline">
                             All demos
                         </Link>
                     </div>
@@ -36,9 +45,7 @@ export default function Home() {
             <Listing />
 
             <div className="heading-60-150 container grid h-screen place-items-center text-balance text-center text-blue">
-                There are more to come!
-                <br />
-                Stay tuned! :D
+                Have a good day!
             </div>
         </div>
     );

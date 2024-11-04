@@ -3,6 +3,7 @@ import "./_styles/globals.css";
 import {LenisProvider} from "./_components/Provider/LenisProvider";
 import {GsapProvider} from "./_components/Provider/GsapProvider";
 import {Bebas_Neue, Roboto} from "next/font/google";
+import Header from "./_components/OnWebComponents/Header";
 
 export const metadata: Metadata = {
     title: "Khoa Phan Playground",
@@ -29,7 +30,10 @@ export default function RootLayout({
         <html lang="en">
             <body
                 className={`${bebasNeue.variable} ${roboto.variable} antialiased`}>
-                <LenisProvider>{children}</LenisProvider>
+                <LenisProvider>
+                    <Header />
+                    {children}
+                </LenisProvider>
                 <GsapProvider scrollTrigger />
             </body>
         </html>
