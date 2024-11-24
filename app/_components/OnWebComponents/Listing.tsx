@@ -52,7 +52,7 @@ const Listing = () => {
     const [previousIndex, setPreviousIndex] = useState<number>(-1);
 
     return (
-        <section>
+        <section id="listing">
             <SectionHeading title="Listing" />
 
             <ul className="">

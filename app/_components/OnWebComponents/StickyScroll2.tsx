@@ -65,7 +65,7 @@ const StickyScroll2 = () => {
         {scope: containerRef}
     );
     return (
-        <section>
+        <section id="sticky-scroll-2">
             <SectionHeading title="Sticky Scroll Variant 2" />
             <div className="h-px bg-black"></div>
             <div ref={containerRef}>

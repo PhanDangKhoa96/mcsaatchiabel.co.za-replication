@@ -65,7 +65,7 @@ const StickyScroll1 = () => {
         {scope: containerRef}
     );
     return (
-        <section>
+        <section id="sticky-scroll-1">
             <SectionHeading title="Sticky Scroll Variant 1" />
             <div
                 style={{height: `${contentArray.length * 100}vh`}}

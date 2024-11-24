@@ -28,7 +28,7 @@ const CTAButton = () => {
     });
 
     return (
-        <section ref={containerRef}>
+        <section ref={containerRef} id="button">
             <SectionHeading title="CTA Button" />
 
             <div className="container grid min-h-[50vh] place-items-center py-10 lg:py-20">
